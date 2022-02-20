@@ -14,10 +14,10 @@ ui <- fluidPage(
         sidebarPanel(
             textInput("client_id", 
                       label = h4("Client ID:"), 
-                      value = "t9iL0Yqma3NV8lTJow87"),
+                      value = ""),
             textInput("client_secret", 
                       label = h4("Client Secret:"), 
-                      value = "ZcBUuT5ElO"),            
+                      value = ""),            
             textInput("keyword", 
                       label = h4("검색 키워드:"), 
                       value = ""),
