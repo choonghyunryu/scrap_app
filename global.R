@@ -1,3 +1,4 @@
+# attach packages
 library("shiny")
 library("dplyr")
 library("koscrap")
@@ -7,6 +8,7 @@ library("tidytext")
 library("wordcloud2")
 library("colourpicker")
 
+# create UDF
 create_wordcloud <- function(data, remove_n = 5, min_freq = 5, background = "white") {
   data %>% 
     filter(nchar(description_text) > 0) %>%   
@@ -20,3 +22,5 @@ create_wordcloud <- function(data, remove_n = 5, min_freq = 5, background = "whi
     wordcloud2::wordcloud2(backgroundColor = background, 
                            fontFamily = "NamumSquare")
 }
+
+# Initialize global environments
