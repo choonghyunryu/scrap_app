@@ -82,6 +82,8 @@ function(input, output, session) {
       req(input$client_id)
       req(input$client_secret)
       
+      write_api_key(input$client_id, input$client_secret)
+      
       koscrap::search_naver(
         query = input$keyword,
         sort  = input$sort,

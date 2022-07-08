@@ -1,4 +1,5 @@
 navbarPage(
+  theme = shinythemes::shinytheme("cerulean"), 
   "네이버 뉴스 검색 애플리케이션",
   tabPanel(
     "뉴스 검색하기",
@@ -6,10 +7,10 @@ navbarPage(
       sidebarPanel(
         textInput("client_id", 
                   label = h4("Client ID:"), 
-                  value = ""),
+                  value = client_id),
         textInput("client_secret", 
                   label = h4("Client Secret:"), 
-                  value = ""),            
+                  value = client_secret),            
         textInput("keyword", 
                   label = h4("검색 키워드:"), 
                   value = ""),
@@ -19,7 +20,8 @@ navbarPage(
         sliderInput("max_record", label = h4("검색 건수:"), min = 0,
                     max = 500, value = 100, step = 100),
         actionButton("search_keyword", label = "뉴스 검색", 
-                     icon = icon("newspaper")),
+                     icon = icon("newspaper"),
+                     class = "btn-primary"),
         width = 3
       ),
       # Reactable에 검색 결과 리스트업
@@ -27,7 +29,8 @@ navbarPage(
         reactableOutput("news_list"),
         width = 9
       )
-    )
+    ),
+    icon = icon("comments")
   ),
   
   tabPanel(
@@ -52,6 +55,7 @@ navbarPage(
         wordcloud2Output("cloud", height = "600px"),
         width = 9
       )
-    ) 
+    ),
+    icon = icon("chart-pie")
   )
 )
